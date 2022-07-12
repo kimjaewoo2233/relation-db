@@ -24,4 +24,9 @@ public class MemberRepositroyTests {
         });
 
     }
+    @Test
+    void testMember(){
+        Member member = memberRepository.findById("user1@spring.com").orElseThrow(RuntimeException::new);
+        member.getBoardList().forEach(System.out::println);
+    }
 }
